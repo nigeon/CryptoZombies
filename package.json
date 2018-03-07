@@ -1,0 +1,33 @@
+{
+  "name": "cryptozombies",
+  "version": "1.0.0",
+  "description": "Loom Network tutorial code (https://cryptozombies.io)",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bn.js": "^4.11.6",
+    "dotenv": "^4.0.0",
+    "ethjs-abi": "^0.2.1",
+    "is-hex-prefixed": "^1.0.0",
+    "js-sha3": "^0.5.5",
+    "number-to-bn": "^1.7.0",
+    "strip-hex-prefix": "^1.0.0",
+    "zeppelin-solidity": "^1.7.0",
+    "install": "^0.10.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nigeon/CryptoZombies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nigeon/CryptoZombies/issues"
+  },
+  "homepage": "https://github.com/nigeon/CryptoZombies#readme"
+}
