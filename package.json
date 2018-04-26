@@ -16,8 +16,11 @@
     "zeppelin-solidity": "^1.7.0",
     "install": "^0.10.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
   "scripts": {
+    "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

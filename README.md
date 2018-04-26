@@ -7,7 +7,21 @@ This are the contracts updated to last lesson of the [CryptoZombies](https://cry
 ```
 npm install -g truffle
 npm install
+truffle compile
+truffle migrate
+npm run dev
 ```
 
-### Quick Usage
+### Notes:
+If getting an error when executing "migrate" because it was already migrated:
+```
+Error: Attempting to run transaction which calls a contract function, but recipient address 0xb389ce45f69e5dcb49375043c02d861b0d4d396b is not a contract address
+```
+
+Execute the migration with "--reset" option:
+```
+truffle migrate --reset
+```
+
+### More info
 * Please see the [Official Truffle Documentation](http://truffleframework.com/docs/) for guides, tips, and examples.
