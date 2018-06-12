@@ -20,22 +20,21 @@ function startApp() {
 
 function displayZombies(ids) {
   $("#zombies").empty();
-console.log(ids);
   for (id of ids) {
     // Look up zombie details from our contract. Returns a `zombie` object
     getZombieDetails(id.toNumber())
     .then(function(zombie) {
-      console.log(zombie);
+
       // Using ES6's "template literals" to inject variables into the HTML.
       // Append each one to our #zombies div
       $("#zombies").append(`<div class="zombie">
         <ul>
-          <li>Name: ${zombie.name}</li>
-          <li>DNA: ${zombie.dna}</li>
-          <li>Level: ${zombie.level}</li>
-          <li>Wins: ${zombie.winCount}</li>
-          <li>Losses: ${zombie.lossCount}</li>
-          <li>Ready Time: ${zombie.readyTime}</li>
+          <li>Name: ${zombie[0].toString()}</li>
+          <li>DNA: ${zombie[1].toString()}</li>
+          <li>Level: ${zombie[2].toNumber()}</li>
+          <li>Wins: ${zombie[3].toNumber()}</li>
+          <li>Losses: ${zombie[4].toNumber()}</li>
+          <li>Ready Time: ${zombie[5].toString()}</li>
         </ul>
       </div>`);
     });
@@ -50,8 +49,6 @@ function createRandomZombie(name) {
   cryptoZombies.deployed().then(function(instance){
     return instance.createRandomZombie(name, { from: userAccount });
   }).then(function(receipt){
-    console.log(receipt);
-
     $("#txStatus").text("Successfully created " + name + "!");
 
     // Transaction was accepted into the blockchain, let's redraw the UI
@@ -129,6 +126,6 @@ window.addEventListener('load', function() {
   startApp();
 
   $('#createRandomZombie').on('click',function(){
-    createRandomZombie("nye");
+    createRandomZombie("RandomZombie" + Math.floor((Math.random() * 666) + 1));
   });
 });
